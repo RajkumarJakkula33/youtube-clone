@@ -30,7 +30,7 @@ resource "aws_security_group" "Jenkins-splunk-sg" {
 }
 
 
-resource "aws_instance" "web" {
+resource "aws_instance" "jenkin-sonar" {
   ami                    = "ami-0c7217cdde317cfec"
   instance_type          = "t2.micro"
   key_name               = "jan5"
@@ -45,12 +45,11 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "splunk" {
   ami                    = "ami-0c7217cdde317cfec"
   instance_type          = "t2.micro"
   key_name               = "jan5"
   vpc_security_group_ids = [aws_security_group.Jenkins-splunk-sg.id]
-  user_data              = templatefile("./install_jenkins.sh", {})
 
   tags = {
     Name = "splunk"
