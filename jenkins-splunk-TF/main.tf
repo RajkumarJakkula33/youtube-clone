@@ -86,7 +86,7 @@ resource "aws_instance" "jenkin-sonar" {
   key_name               = "jan5"
   iam_instance_profile   = "${aws_iam_instance_profile.ec2_profile.name}"
   vpc_security_group_ids = [aws_security_group.Jenkins-splunk-sg.id]
-  user_data              = templatefile("./install_jenkins.sh", {})
+  user_data              = file("install_jenkins.sh")
 
   tags = {
     Name = "Jenkins-sonar"
