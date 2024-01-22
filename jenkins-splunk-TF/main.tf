@@ -1,4 +1,4 @@
-# Create an IAM role for EC2
+# Create an IAM role for EC2 (IAM creation: https://devopslearning.medium.com/aws-iam-ec2-instance-role-using-terraform-fa2b21488536)
 resource "aws_iam_role" "ec2_role" {
   name = "ec2-instance-role"
   
