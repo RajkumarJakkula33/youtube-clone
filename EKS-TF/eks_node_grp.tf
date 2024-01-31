@@ -1,6 +1,6 @@
 resource "aws_eks_node_group" "node-grp" {
   cluster_name    = aws_eks_cluster.eks.name
-  node_group_name = "mario-node-group"
+  node_group_name = "youtube-node-group"
   node_role_arn   = aws_iam_role.worker.arn
   subnet_ids      = [aws_subnet.public-1.id, aws_subnet.public-2.id]
   capacity_type   = "ON_DEMAND"
