@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: youtube-deployment
+  namespace: youtube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: youtube
+  template:
+    metadata:
+      labels:
+        app: youtube
+    spec:
+      containers:
+        - name: youtube
+          image: rajkumar837/youtube:latest
+          ports:
+            - containerPort: 3000  # Your Node.js application should listen on port 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: youtube-deployment
+  namespace: youtube
+spec:
+  selector:
+    app: youtube
+  ports:
+    - protocol: TCP
+      port: 80  # You can use port 80 here for HTTP traffic
+      targetPort: 3000  # This should match the port your Node.js application is running on (3000)
+  type: NodePort
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: youtube
