@@ -10,3 +10,6 @@
 ✅ A special YOUTUBE discount code is automatically applied!
 
 📙 Get the Ultimate Frontend & Backend Development Roadmaps, a Complete JavaScript Cheatsheet, Portfolio Tips, and more - https://www.jsmastery.pro/links
+
+
+Deployment Blog: https://rajkumarjakkula.hashnode.dev/project-a-journey-through-my-youtube-clone
